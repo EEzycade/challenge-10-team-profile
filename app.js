@@ -2,7 +2,7 @@
 const inquirer = require('inquirer');
 const Employee = require('./lib/Employee');
 const Intern = require('./lib/Intern');
-const Engineer = require('./lib/Intern');
+const Engineer = require('./lib/Engineer');
 const Manager = require('./lib/Manager');
 const handleTeamData = require('./src/html-template.js');
 
@@ -98,7 +98,7 @@ function addEngineer () {
         .then((engineerData) => {
             const engineer = new Engineer(engineerData.name, engineerData.employeeId, engineerData.email, engineerData.gitHub);
             teamArray.push(engineer);
-            addEmployee();
+           addEmployee();
         })
 }
 
@@ -133,8 +133,6 @@ function initializeApp() {
         .then((managerData) => {
             const manager = new Manager(managerData.name, managerData.employeeId, managerData.email, managerData.officeNum);
             teamArray.push(manager);
-            console.log(manager);
-            console.log(teamArray);
             addEmployee();
         });
 };

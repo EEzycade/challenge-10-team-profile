@@ -12,7 +12,7 @@ module.exports = function handleTeamData(teamArray) {
         if (role === "engineer") {
             allHtml = allHtml + createEngHtml(teamArray[i]);
         }
-        else {
+        if (role === "intern") {
             allHtml = allHtml + createIntHtml(teamArray[i]);
         }
     }
@@ -75,7 +75,7 @@ function createIntHtml(data) {
                 <br/>
                 Email: <a href="mailto: ${data.email}">${data.email}</a>
                 <br/>
-                Github: ${data.school}
+                School: ${data.school}
             </p>
         </div>
     </div>
